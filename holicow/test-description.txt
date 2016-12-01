@@ -1,0 +1,100 @@
+
+1)
+test1.txt
+
+description:
+This test case is designed in such a way that, no cow get painted by any starting paint ball.
+Some of the paint ball triggers other paint balls, but non of them colors any of the cow.
+so, in this case the Graph is created such that edge exists only between paint balls.
+so, after running test1, results will look like this:
+
+Field of Dreams
+---------------
+BLUE connectedTo: ['RED', 'GREEN']
+RED connectedTo: ['BLUE']
+GREEN connectedTo: ['BLUE']
+
+Beginning simulation...
+Triggering BLUE paint ball...
+	 RED paint ball is triggered by BLUE paint ball
+	 GREEN paint ball is triggered by BLUE paint ball
+Triggering RED paint ball...
+	 BLUE paint ball is triggered by RED paint ball
+	 GREEN paint ball is triggered by BLUE paint ball
+Triggering GREEN paint ball...
+	 BLUE paint ball is triggered by GREEN paint ball
+
+Results:
+No cows were painted by any starting paint ball!
+
+
+
+2)
+test2.txt
+
+description:
+This test case is designed in such a way that, there will be tie between multiple paint balls
+for optimal result. In this test case, triggering of RED and YELLOW paint balls, both colors cows
+with 4 colors. So, here we choose one of these paint ball as optimal solution.(In this case RED.)
+so, after running test2, results will look like this:
+
+Field of Dreams
+---------------
+BLUE connectedTo: ['Babe']
+Babe connectedTo: []
+RED connectedTo: ['Daisy', 'Milka', 'GREEN']
+Daisy connectedTo: []
+Milka connectedTo: []
+GREEN connectedTo: ['BLUE', 'Milka']
+YELLOW connectedTo: ['Fauntleroy', 'Gaumata', 'Gaiya']
+Fauntleroy connectedTo: []
+Gaumata connectedTo: []
+Gaiya connectedTo: []
+
+Beginning simulation...
+Triggering BLUE paint ball...
+	Babe is painted BLUE!
+Triggering RED paint ball...
+	Daisy is painted RED!
+	Milka is painted RED!
+	GREEN paint ball is triggered by RED paint ball
+	Milka is painted GREEN!
+Triggering GREEN paint ball...
+	BLUE paint ball is triggered by GREEN paint ball
+	Babe is painted BLUE!
+	Milka is painted GREEN!
+Triggering YELLOW paint ball...
+	Fauntleroy is painted YELLOW!
+	Gaumata is painted YELLOW!
+	Gaiya is painted YELLOW!
+
+Results:
+Triggering the RED paint ball is the best choice with 4 total paint on the cows:
+	Fauntleroy's colors: {}
+	Milka's colors: {'RED', 'GREEN'}
+	Gaumata's colors: {}
+	Babe's colors: {'BLUE'}
+	Gaiya's colors: {}
+	Daisy's colors: {'RED'}
+
+
+
+3)
+test3.txt
+
+description:
+This test case is designed such way that, There will no paintball and just cows in the input.
+So, in this case graph with no edges will be created. So, after running test3, results will look like this:
+
+Field of Dreams
+---------------
+Daisy connectedTo: []
+Fauntleroy connectedTo: []
+Babe connectedTo: []
+Milka connectedTo: []
+Jaadu connectedTo: []
+
+Beginning simulation...
+
+Results:
+No cows were painted by any starting paint ball!
